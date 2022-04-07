@@ -1,5 +1,5 @@
 # Titel: Parallel Image Blending
-## Team Members: Amanda Xinyi Xu (xinyix2), Ziming He (zimingh)
+## Team Members: Amanda Xu (xinyix2), Ziming He (zimingh)
 
 ### SUMMARY: 
 We are going to explore parallel versions of various image blending techniques, which include gradient blending, seam-driven image blending and pyramid blending. We will be implementing parallel versions of those image blending/stitching techniques on NVIDIA GPUs using CUDA.
