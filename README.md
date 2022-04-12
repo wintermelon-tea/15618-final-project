@@ -1,4 +1,4 @@
-# Titel: Parallel Image Blending
+# Title: Parallel Image Blending
 ## Team Members: Amanda Xu (xinyix2), Ziming He (zimingh)
 
 ### SUMMARY: 
@@ -16,13 +16,29 @@ The main challenges would be around the memory limit and the access patterns. Si
 
 ### RESOURCES: 
 We will probably use the GHC machine for the entire project. There may exist CUDA implementation for some of the image stitching techniques but we will start with implementing sequential versions of those techniques with CUDA and move on to parallel versions and further optimizations. 
+
 ### GOALS AND DELIVERABLES: 
 Our 75% goal is to implement one parallel version of one image blending technique. Our 100% goal is to implement parallel versions for at least two image blending techniques. Our 125% goal is to implement parallel versions for at least two image blending techniques with optimized access patterns. In the poster session we will provide a program that can be run to show the difference between sequential and parallel version of those image blending techniques. This program will produce the output in different amount of time. The speedup should be obvious if we use high-resolution images (minutes with sequential version and seconds with parallel version). We are not sure the exact speedup that we can achieve at the moment, but it should be in the ballpark of 10x.
+
 ### PLATFORM CHOICE: 
 We will be coding in C++ with the CUDA framework on GHC machines with NVIDIA GPU devices. This is a good choice because we are doing a large number of tasks that are the same across hundreds or thousands of pixels and CUDA programming should be the best platform for use in this project.
+
 ### SCHEDULE: 
 1. Week 1(0323 - 0330): Implement sequential version of one image blending technique
 2. Week 2(0331 - 0406): Implement parallel version of one image blending technique and performance evaluation
 3. Week 3(0407 - 0413): Checkpoint on 0411 with milestone report. Implement sequential version of another image blending technique
 4. Week 4(0414 - 0420): Implement parallel version of another image blending technique and performance evaluation, comparison between both image blending techniques
 5. Week 5(0421 - 0429): More memory access patterns optimizations. Prepare the poster for the poster session.
+
+### MILESTONE REPORT:
+So far, we have completed implementing the sequential version of the alpha blending algorithm and a preliminary verision for its parallel verision on CUDA. Our current parallel version dividies the images into blocks of areas and launch individual GPU block for the pixel blocks. We were able to achieve a 60x speedup with our test image. We are going to experiment with different resolution / size of image to experiment on the relationship between Speedup versus Number of pixels (work).
+
+We are currently working on implementing / transforming the sequential Poisson image blending algorithm to be CUDA compatible, and thinking about areas of the code that can be parallelized on GPUs. Based on the feedbacks that we had with our TA mentor, we should focus on different areas that we can parallelize rather than just dividing the pixels of one image into pixels. We are researching for some of the previous work that have examined the steps for Poisson image blending algorithm and thinking about more novel approaches that we can take in parallelizing certain steps in the gradient based approach.
+
+Based on our previous plan, we have completed one parallel version of an image blending algorithm and in progress of finishing the second one which is also the bulk of our project. Our goal was to complete parallel version of both algorithm and examine how percentage of algorithm is parallelizable influences the final speedup for GPU programming model, and how other aspects, such as task subdivision, number of pixels, influence the outcome. We are on the right track to complete the project in progress and expect to meet up with our mentor sometime later this week after we finish exam 2.
+
+We believe that we should have a working demo in the poster session with graphs that examine different contributing factors for the speedup. If anything changes, we will notify our mentor.
+
+Our preliminary result right now is a 60x speedup for alpha image blending on a 256*256 image pairs using the block subdivision approach.
+
+We have some new ideas about how to parallel the gradient image blending algorithm and we would like to discuss their possibilities with our mentor before implementing them.
