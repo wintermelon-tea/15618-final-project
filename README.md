@@ -42,3 +42,9 @@ We believe that we should have a working demo in the poster session with graphs 
 Our preliminary result right now is a 60x speedup for alpha image blending on a 256*256 image pairs using the block subdivision approach.
 
 We have some new ideas about how to parallel the gradient image blending algorithm and we would like to discuss their possibilities with our mentor before implementing them.
+
+Revised Schedule:
+1. 4/16-4/20: Check with mentor about parallel approaches
+2. 4/20-4/23: Implement parallel version for Poission image blending
+3. 4/24-4/27: Benchmarking and collecting results
+4. 4/27-4/29: Finish the poster and final report
