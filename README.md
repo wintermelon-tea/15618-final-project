@@ -48,3 +48,8 @@ Revised Schedule:
 2. 4/20-4/23: Implement parallel version for Poission image blending
 3. 4/24-4/27: Benchmarking and collecting results
 4. 4/27-4/29: Finish the poster and final report
+
+### Deliverables:
+
+Final report: https://github.com/wintermelon-tea/15618-final-project/blob/main/618-final-report.pdf
+Presentation video: https://youtu.be/6WhUH1fI2Sc
