@@ -52,4 +52,5 @@ Revised Schedule:
 ### Deliverables:
 
 Final report: https://github.com/wintermelon-tea/15618-final-project/blob/main/618-final-report.pdf
+
 Presentation video: https://youtu.be/6WhUH1fI2Sc
